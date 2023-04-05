@@ -1,9 +1,11 @@
 import subprocess
 import time
+import os
 
 def run_bot(bot_name):
     print(f"Exécution du bot {bot_name}...")
-    process = subprocess.Popen(["python", bot_name])
+    cmd_command = f"start cmd /k python {bot_name}"
+    process = subprocess.Popen(cmd_command, shell=True)
     return process
 
 def kill_bot(process):
@@ -26,3 +28,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
